@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Mar-2022 às 21:13
+-- Tempo de geração: 30-Abr-2022 às 23:58
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.3
 
@@ -82,8 +82,7 @@ INSERT INTO `alunoxresponsavel` (`id`, `idaluno`, `idresponsavel`) VALUES
 (10, 7, 36),
 (11, 7, 5),
 (12, 1, 35),
-(13, 6, 35),
-(15, 4, 90);
+(13, 6, 35);
 
 -- --------------------------------------------------------
 
@@ -537,7 +536,14 @@ INSERT INTO `registros` (`id`, `tipo`, `idaluno`, `tipo_registro`, `data_criacao
 (568, 'alunos', 1, 1, '2022-03-08 17:53:25'),
 (569, 'alunos', 1, 2, '2022-03-08 17:53:27'),
 (570, 'alunos', 1, 1, '2022-03-08 17:53:44'),
-(571, 'alunos', 1, 2, '2022-03-08 17:53:45');
+(571, 'alunos', 1, 2, '2022-03-08 17:53:45'),
+(572, 'alunos', 1, 1, '2022-04-13 13:03:56'),
+(573, 'alunos', 1, 2, '2022-04-13 13:04:02'),
+(574, 'alunos', 1, 1, '2022-04-13 13:04:07'),
+(575, 'alunos', 1, 2, '2022-04-13 13:04:11'),
+(576, 'alunos', 1, 1, '2022-04-26 11:43:21'),
+(577, 'alunos', 2, 1, '2022-04-26 11:43:41'),
+(578, 'alunos', 2, 2, '2022-04-26 11:43:47');
 
 -- --------------------------------------------------------
 
@@ -563,7 +569,7 @@ CREATE TABLE `responsavel` (
 --
 
 INSERT INTO `responsavel` (`id`, `cpf`, `nome`, `sobrenome`, `email`, `senha`, `telefone`, `aceita_email`, `token`, `confirmado`) VALUES
-(1, '55555555555', 'Edson', 'dos Santos', 'edson@mycontrolapp.com', '202cb962ac59075b964b07152d234b70', '', 1, '', 1),
+(1, '55555555555', 'Edson', 'dos Santos', 'edson@mycontrolapp.com', '25d55ad283aa400af464c76d713c07ad', '', 1, '', 1),
 (2, '66666666666', 'Antônio', 'Dantas Vieira', 'dantas@mycontrolapp.com', '202cb962ac59075b964b07152d234b70', '', 1, '', 1),
 (5, '98765432111', 'Ricardo', ' Gurgel', 'ricardo@mycontrolapp.com', '202cb962ac59075b964b07152d234b70', '', 1, '', 0),
 (35, '12332112354', 'Aparecida', 'Bastos', 'cida@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 1, '', 0),
@@ -571,9 +577,8 @@ INSERT INTO `responsavel` (`id`, `cpf`, `nome`, `sobrenome`, `email`, `senha`, `
 (37, '78978978965', 'Marlene', 'Santos', 'marlene@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL, 1, '', 0),
 (38, '12332112325', 'Luis', 'Inácio da Silva', 'lula@2022.com.br', '3a824154b16ed7dab899bf000b80eeee', NULL, 1, '', 0),
 (39, '32165498701', 'Carlos', 'Almeida', 'contoso@testemail.com', '$2a$12$fbQZzlPXwFAYhp2D6Y5GoevSWVG9jvDmjwpQF25X2QRTxhXC9MOJy', NULL, 1, '', 0),
-(90, '14364990701', 'Francisco', 'Silva', 'informatica@escolaedem.com.br', '03190d8acb3c9c1d70c7ec84523e224d', NULL, 1, '', 1),
-(92, '06465978768', 'Leandro', 'da Silva', 'bthiagos@gmail.com', '$2y$10$93DXmfIyYwLCk.Cg8vItu.A8TkIYi72Edn7qN4CMa2cwk0sbzbY0.', NULL, 1, '', 1),
-(93, '55668822147', 'Zeca', 'Pagodinho', 'zeca@meuzeca.com.br', '$2y$10$A0tcNqr5Ne9vyYeHeLCdKODB3zaDsLwGCYc0QMfDfKpjrFIDC2ZSa', NULL, 1, '123456', 1);
+(96, '14364990701', 'Thiago', 'Bastos dos Santos', 'bthiagos@gmail.com', '2db0996b2ef1d2008d45379f785233eb', NULL, 1, 'e7bdfa4b8da8d2ab865f2f48dbe2e4ae', 0),
+(100, '179.918.070', 'Zeca', 'Pagodinho', 'informatica@escolaedem.com.br', '$2y$10$07Zp3P9efDvqf1Q96ZVvkufTjn1nPOiXnoYMY2oTeZBpEH2xi3J9.', NULL, 1, '123456', 1);
 
 -- --------------------------------------------------------
 
@@ -619,8 +624,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha`, `tipo`, `email`, `aceita_email`) VALUES
 (1, 'Administrador', 'admin', '2db0996b2ef1d2008d45379f785233eb', 1, 'admin@mycontrol.com', 1),
 (2, 'João Cunha Jr', 'portaria', '2db0996b2ef1d2008d45379f785233eb', 2, 'portaria@mycontrol.com', 1),
-(3, 'Thiago Bastos', 'thiago', '2db0996b2ef1d2008d45379f785233eb', 1, 'bthiagos@gmail.com', 1),
-(4, 'Juan', 'juan', 'f8221a40fabc7aea0fbb9c92fc9e16f4', 1, 'juanluizshut@gmail.com', 1);
+(3, 'Thiago Bastos', 'thiago', '2db0996b2ef1d2008d45379f785233eb', 1, 'bthiagos@gmail.com', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -698,13 +702,13 @@ ALTER TABLE `config_email`
 -- AUTO_INCREMENT de tabela `registros`
 --
 ALTER TABLE `registros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=572;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=579;
 
 --
 -- AUTO_INCREMENT de tabela `responsavel`
 --
 ALTER TABLE `responsavel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT de tabela `tipo_pessoa`
