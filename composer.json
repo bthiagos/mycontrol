@@ -1,0 +1,6 @@
+{
+    "require": {
+        "react/event-loop": "^1.2",
+        "firebase/php-jwt": "^6.0"
+    }
+}
