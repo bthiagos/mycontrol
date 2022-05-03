@@ -665,6 +665,10 @@ class Action
 		} else {
 			$ltype = 1;
 		}
+		//RESGATAR VALORES PARA E-MAIL
+		$e_matricula = $result['matricula'];
+		$e_nome = $result['nome'];
+		$e_entrada = $result['data_criacao'];
 
 		$save = $this->db->query("INSERT INTO registros (idaluno, tipo_registro, tipo) VALUES ('$id','$ltype','$type')");
 		if ($save) {
@@ -701,8 +705,13 @@ class Action
 				$mail->Subject = APP_NAME . ' - Notificação';
 
 				//Mensagem
-				$html = '<p>' . APP_NAME . '.</p>';
-				$html .= '<p>Para redefinir a senha de acesso, clique no link abaixo:</p>';
+				$html = '<p>Registro de Entrada e Saída</p>';
+				$html .= '<p></p>';
+				$html .= '<p></p>';
+				$html .= '<p>Matrícula: <b>' . $data['matricula'] . ' </b></p>';
+				$html .= '<p>Aluno: <b>' . $data['nome'] . ' </b></p>';
+				$html .= '<p>Registro: <b>' . $e_entrada . '</b> </p>';
+				$html .= '<p></p>';
 				$html .= '<p></p>';
 				$html .= '<p><i><small>' . APP_NAME . '</small></i></p>';
 				$mail->Body    = $html;
@@ -712,6 +721,7 @@ class Action
 			} catch (Exception $e) {
 				return json_encode($data);
 			}
+			/* return json_encode($data); */
 		}
 	}
 
