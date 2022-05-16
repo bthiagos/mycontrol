@@ -63,22 +63,13 @@ if($action == 'delete_familia'){
 	if($save)
 		echo $save;
 }
-/* if($action == 'check_student'){
-	$save = $crud->check_student();
-	if($save)
-		echo $save;
-} */
+
 if($action == 'signup'){
 	$save = $crud->signup();
 	if($save)
 	echo $save;
 }
 
-/* if($action == 'signup2'){
-	$save = $crud->signup2();
-	if($save)
-	echo $save;
-} */
 
 if($action == 'update_account'){
 	$save = $crud->update_account();
@@ -103,23 +94,11 @@ if($action == "save_student"){
 		echo $save;
 }
 
-/* if($action == "save_student2"){
-	$save = $crud->save_student2();
-	if($save)
-		echo $save;
-} */
-
 if($action == "delete_student"){
 	$save = $crud->delete_student();
 	if($save)
 		echo $save;
 }
-
-/* if($action == "recebe_student"){
-	$save = $crud->recebe_student();
-	if($save)
-		echo $save;
-} */
 
 if($action == "save_log"){
 	$save = $crud->save_log();

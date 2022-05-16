@@ -7,7 +7,6 @@ $data = array();
 foreach ($query_run as $row) {
     $data[] = $row;
 }
-/* mysqli_close($conn); */
 
 echo json_encode($data);
                         /*  echo "<h1> " . $row . "</h1>"; */

@@ -31,7 +31,6 @@ if (isset($_SESSION['login_resp_id']) and ($_SESSION['login_resp_confirmado']) =
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <!--<h3 class="my-heading ">my<span class="bg-main">Control</span></h3>-->
                 <h3 class="my-heading "><span class="bg-main"><img src="assets/img/logo-atual-v2.png" class="logo-head"></span></h3>
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,14 +132,6 @@ if (isset($_SESSION['login_resp_id']) and ($_SESSION['login_resp_confirmado']) =
                     <div class="form-container sign-up-container">
 
                         <form action="#" id="signup-frm" method="POST">
-                            <!-- <h5>Dados do Aluno</h5>
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" name="id_no" id="id_no" placeholder="Matrícula do Aluno" required />
-                                    <input type="text" class="form-control" name="cpf_aluno" id="cpf_aluno" placeholder="CPF do Aluno" class="mb-4" required />
-                                </div>
-                            </div>
-                            <h5>Dados do Responsável</h5> -->
                             <div id="cadastrov1" class="form-group">
                                 <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Seu CPF" data-mask="000.000.000-00" autofocus required />
                                 <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required />
@@ -321,7 +312,6 @@ if (isset($_SESSION['login_resp_id']) and ($_SESSION['login_resp_confirmado']) =
             </div>
         </div>
     </footer>
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js" integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>

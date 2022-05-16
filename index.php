@@ -213,7 +213,7 @@ if (isset($_SESSION['login_resp_id']) and ($_SESSION['login_resp_confirmado']) =
             </div>
         </div>
     </header>
-    
+
     <section class="testimonials" id="gobottom">
         <div class="container">
             <div class="row">
@@ -265,13 +265,6 @@ if (isset($_SESSION['login_resp_id']) and ($_SESSION['login_resp_confirmado']) =
             </div>
         </div>
     </section>
-    <!-- <a class="whatsapp-link" href="https://api.whatsapp.com/send/?phone=%2B5521970027164" target="_blank">
-    <i class="fa fa-whatsapp"></i>
-</a> -->
-    <!--    <a class="whatsapp-link" href="https://api.whatsapp.com/message/WXRGIHSTF6QBA1" target="_blank" rel="noopener">
-        <img class="whatsapp-imagem alignnone wp-image-137" src="https://www.edem.g12.br/src/uploads/2021/09/whatsapp-logo.png" alt="" width="76" height="76" />
-    </a> -->
-
     <a class="whatsapp" href="https://api.whatsapp.com/send/?phone=%2B5521970027164" target="_blank" rel="noopener" id="contato">
         <img class="imagem alignnone wp-image-137" src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-3-1.png" alt="" width="76" height="76" />
     </a>
@@ -288,13 +281,6 @@ if (isset($_SESSION['login_resp_id']) and ($_SESSION['login_resp_confirmado']) =
                             <a href="#contato">Contato</a>
                         </li>
                         <li class="list-inline-item">⋅</li>
-                        <!--                         <li class="list-inline-item">
-                            <a href="#">Termos de Uso</a>
-                        </li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item">
-                            <a href="#">Politica de Privacidade</a>
-                        </li> -->
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">© TCC Thiago 2021. Todos os direitos reservados.</p>
                 </div>
@@ -320,7 +306,6 @@ if (isset($_SESSION['login_resp_id']) and ($_SESSION['login_resp_confirmado']) =
             </div>
         </div>
     </footer>
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js" integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>

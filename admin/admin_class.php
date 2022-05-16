@@ -313,7 +313,6 @@ class Action
 				$mail->CharSet = 'UTF-8';
 
 				//Server settings
-				/* $mail->SMTPDebug = SMTP::DEBUG_OFF; */
 				$mail->isSMTP();
 				$mail->Host       = EMAIL_HOST;
 				$mail->SMTPAuth   = true;
@@ -376,7 +375,7 @@ class Action
 			$data_criacao = date("Y-m-d H:i:s", $formato_exp);
 			$chave = md5($row['id'] . $row['email']);
 			$save = $this->db->query("INSERT INTO redefine_senha_temp (email,chave,data_criacao) VALUES ('$email','$chave','$data_criacao')");
-			/* $save = $this->db->query("INSERT INTO responsavel (cpf, nome, sobrenome, email, senha, aceita_email, token, confirmado) VALUES ('$cpf','$nome','$sobrenome','$email','$senha',1, '$token',0) "); */
+			
 		} else {
 			return 2;
 			exit;
@@ -384,15 +383,13 @@ class Action
 		if ($save) {
 			//criar o link para receber a confirmação do e-mail do cadastro
 			$link = 'http://localhost/mycontrol/envia_novasenha.php?chave=' . $chave . '&email=' . $email . '&action=reset';
-			/* "http://localhost/tutorial/reset-password.php?key=' . $key . '&email=' . $email . '&action=reset"; */
-
+			
 			$mail = new PHPMailer();
 			try {
 				$mail->setLanguage('br');
 				$mail->CharSet = 'UTF-8';
 
 				//Server settings
-				/* $mail->SMTPDebug = SMTP::DEBUG_OFF; */
 				$mail->isSMTP();
 				$mail->Host       = EMAIL_HOST;
 				$mail->SMTPAuth   = true;
@@ -404,7 +401,6 @@ class Action
 				//Recipients
 				$mail->setFrom(EMAIL_FROM, APP_NAME);
 				$mail->addAddress($email_a_enviar);
-				/* $mail->addBCC(EMAIL_ADMIN); */
 
 				//Assunto
 				$mail->isHTML(true);
@@ -413,16 +409,6 @@ class Action
 				//Mensagem
 				$html = '<p>' . APP_NAME . '.</p>';
 				$html .= '<p>Para redefinir a senha de acesso, clique no link abaixo:</p>';
-				/* $html .= '<p><a href="' . $link . '" style="
-				background-color= #007bff;
-				border: none;
-				color: #fff;
-				padding: 10px 30px;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 16px;">Redefinir senha</a></p>'; */
-
 				$html .= '<p><a href="' . $link . '" style="
 				background-color: #007bff;
 				border: none;
@@ -689,15 +675,11 @@ class Action
 		if ($save) {
 			$data['status'] = 1;
 			$data['tipo'] = $ltype;
-			/* sleep(2);
-			return json_encode($data); */
-
 			try {
 				$mail->setLanguage('br');
 				$mail->CharSet = 'UTF-8';
 
 				//Server settings
-				/* $mail->SMTPDebug = SMTP::DEBUG_OFF; */
 				$mail->isSMTP();
 				$mail->Host       = EMAIL_HOST;
 				$mail->SMTPAuth   = true;
@@ -711,10 +693,6 @@ class Action
 				foreach ($emails_resps as $value) {
 					$mail->AddAddress($value); //Adiciona os endereços
 				}
-
-				/* $mail->addAddress($email_a_enviar); */
-				/* $mail->addBCC(EMAIL_ADMIN); */
-
 				//Assunto
 				$mail->isHTML(true);
 				$mail->Subject = APP_NAME . ' - Entrada e Saída';
@@ -752,11 +730,6 @@ class Action
 				ob_end_clean();
 
 				//Mensagem
-				/* $html = '<p>' . APP_NAME . '.</p>';
-				$html .= '<p>Registro de Entrada e Saída</p>';
-				$html .= '<p></p>';
-				$html .= '<p><i><small>' . APP_NAME . '</small></i></p>';
-				$mail->Body    = $html; */
 				$mail->Body = $mensagem;
 
 				$mail->send();
@@ -767,16 +740,7 @@ class Action
 		}
 	}
 
-	/* 	function recebe_student()
-	{
-		extract($_POST);
-		$recebe_id = $this->db->query("SELECT id FROM students where id = " . $id);
-		if ($recebe_id) {
-			$id_aluno = $id;
-			return 1;
-		}
-	}
- */
+
 	function chart2()
 	{
 		$query =  "SELECT COUNT(*) as total, MONTH(NOW()) as mes FROM registros 
