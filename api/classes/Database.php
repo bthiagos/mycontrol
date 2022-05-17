@@ -3,7 +3,7 @@ class Database{
     
     // LOCALHOST
     private $db_host = 'localhost';
-    private $db_name = '_mycontrol_v3';
+    private $db_name = '_mycontrol_v4';
     private $db_username = 'root';
     private $db_password = ''; 
 

@@ -4,7 +4,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "_mycontrol_v3";
+$banco = "_mycontrol_v4";
 
 $conn= new mysqli($servidor,$usuario,$senha,$banco)or die("Could not connect to mysql".mysqli_error($con));
 
