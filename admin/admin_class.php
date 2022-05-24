@@ -100,7 +100,7 @@ class Action
 		$data .= ", usuario = '$usuario' ";
 		if (!empty($senha))
 			$data .= ", senha = '" . md5($senha) . "' ";
-		$data .= ", tipo = '$type' ";
+		/* $data .= ", tipo = '$tipo' "; */
 		$chk = $this->db->query("Select * from usuarios where usuario = '$usuario' and id !='$id' ")->num_rows;
 		if ($chk > 0) {
 			return 2;

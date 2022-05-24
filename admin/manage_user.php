@@ -37,7 +37,6 @@ if (isset($_GET['id'])) {
 				<div class="form-group">
 					<label for="tipo">Tipo de Usuário</label>
 					<select name="tipo" id="tipo" class="custom-select">
-						<option value="3" <?php echo isset($meta['tipo']) && $meta['tipo'] == 3 ? 'selected' : '' ?>>Responsável</option>
 						<option value="2" <?php echo isset($meta['tipo']) && $meta['tipo'] == 2 ? 'selected' : '' ?>>Colaborador</option>
 						<option value="1" <?php echo isset($meta['tipo']) && $meta['tipo'] == 1 ? 'selected' : '' ?>>Admin</option>
 					</select>
@@ -49,6 +48,58 @@ if (isset($_GET['id'])) {
 	</form>
 </div>
 <script>
+	$('#manage-user').on('reset', function() {
+		$('#msg').html('')
+		$('input:hidden').val('')
+	})
+	$('#manage-user').submit(function(e) {
+		e.preventDefault()
+		start_load()
+		$('#msg').html('')
+		$.ajax({
+			url: 'ajax.php?action=save_user',
+			data: new FormData($(this)[0]),
+			cache: false,
+			contentType: false,
+			processData: false,
+			method: 'POST',
+			type: 'POST',
+			success: function(resp) {
+				if (resp == 1) {
+					alert_toast("Dados salvos com sucesso.", 'success')
+					setTimeout(function() {
+						location.reload()
+					}, 1000)
+				} else if (resp == 2) {
+					$('#msg').html('<div class="alert alert-danger mx-2">Usuário já existe!</div>')
+					end_load()
+				}
+			}
+		})
+	})
+
+	$('.select2').select2({
+		placeholder: "Selecione aqui",
+		width: '100%'
+	})
+
+	var senha = $('#senha');
+	var olho = $("#olho");
+
+	olho.mousedown(function() {
+		senha.attr("type", "text");
+	});
+
+	olho.mouseup(function() {
+		senha.attr("type", "password");
+	});
+	// para evitar o problema de arrastar a imagem e a senha continuar exposta, 
+	//citada pelo nosso amigo nos comentários
+	$("#olho").mouseout(function() {
+		$("#senha").attr("type", "password");
+	});
+</script>
+<!-- <script>
 	$('#manage-user').submit(function(e) {
 		e.preventDefault();
 		start_load()
@@ -82,4 +133,4 @@ if (isset($_GET['id'])) {
 	$("#olho").mouseout(function() {
 		$("#password").attr("type", "password");
 	});
-</script>
+</script> -->

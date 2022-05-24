@@ -38,7 +38,7 @@ if (($_SESSION['login_tipo'] != 1)) {
 					<tbody>
 						<?php
 						include 'db_connect.php';
-						$type = array("", "Admin", "Staff", "Colaborador");
+						$type = array("", "Admin", "Colaborador", "Staff");
 						$usuarios = $conn->query("SELECT * FROM usuarios order by nome asc");
 						$i = 1;
 						while ($row = $usuarios->fetch_assoc()) :
